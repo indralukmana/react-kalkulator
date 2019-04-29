@@ -20,7 +20,13 @@ class App extends React.Component {
   };
 
   setValue = event => {
-    this.setState({ value: this.state.value + event });
+    if (this.state.value === Infinity || this.state.value === "error") {
+      this.setState({ value: "" }, function() {
+        this.setState({ value: this.state.value + event });
+      });
+    } else {
+      this.setState({ value: this.state.value + event });
+    }
   };
 
   reset = event => {
@@ -53,17 +59,17 @@ class App extends React.Component {
               className="operator"
               onClickHandler={this.setValue}
             />
-            <Button name="1" type="button" onClickHandler={this.setValue} />
-            <Button name="2" type="button" onClickHandler={this.setValue} />
-            <Button name="3" type="button" onClickHandler={this.setValue} />
+            <Button name="7" type="button" onClickHandler={this.setValue} />
+            <Button name="8" type="button" onClickHandler={this.setValue} />
+            <Button name="9" type="button" onClickHandler={this.setValue} />
 
             <Button name="4" type="button" onClickHandler={this.setValue} />
             <Button name="5" type="button" onClickHandler={this.setValue} />
             <Button name="6" type="button" onClickHandler={this.setValue} />
 
-            <Button name="7" type="button" onClickHandler={this.setValue} />
-            <Button name="8" type="button" onClickHandler={this.setValue} />
-            <Button name="9" type="button" onClickHandler={this.setValue} />
+            <Button name="1" type="button" onClickHandler={this.setValue} />
+            <Button name="2" type="button" onClickHandler={this.setValue} />
+            <Button name="3" type="button" onClickHandler={this.setValue} />
 
             <Button name="0" type="button" onClickHandler={this.setValue} />
             <Button
