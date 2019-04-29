@@ -1,12 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 import Input from "./components/Input";
 import Button from "./components/Button";
 
-  return (
-    <div className="App">
+class App extends React.Component {
+  state = {
+    result: "",
+    value: "",
+    operation: ""
+  };
+
+  calculate = () => {
+    this.setState({ value: eval(this.state.value) });
+  };
+
+  setValue = event => {
+    this.setState({ value: this.state.value + event });
+    console.log(this.state.value);
+  };
+
+  render() {
+    return (
+      <div className="App">
         <div className="kalkulator">
           <Input value={this.state.value} />
           <div>
@@ -30,8 +46,9 @@ import Button from "./components/Button";
             <Button name="=" onClickHandler={this.calculate} />
           </div>
         </div>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
