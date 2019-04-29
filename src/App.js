@@ -7,20 +7,29 @@ import Button from "./components/Button";
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <div className="kalkulator">
+          <Input value={this.state.value} />
+          <div>
+            <Button name="0" onClickHandler={this.setValue} />
+            <Button name="1" onClickHandler={this.setValue} />
+            <Button name="2" onClickHandler={this.setValue} />
+            <Button name="3" onClickHandler={this.setValue} />
+            <Button name="4" onClickHandler={this.setValue} />
+            <Button name="5" onClickHandler={this.setValue} />
+            <Button name="6" onClickHandler={this.setValue} />
+            <Button name="7" onClickHandler={this.setValue} />
+            <Button name="8" onClickHandler={this.setValue} />
+            <Button name="9" onClickHandler={this.setValue} />
+
+            <Button name="+" onClickHandler={this.setValue} />
+            <Button name="-" onClickHandler={this.setValue} />
+            <Button name="/" onClickHandler={this.setValue} />
+            <Button name="*" onClickHandler={this.setValue} />
+            <Button name="." onClickHandler={this.setValue} />
+
+            <Button name="=" onClickHandler={this.calculate} />
+          </div>
+        </div>
     </div>
   );
 }
