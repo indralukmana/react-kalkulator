@@ -12,7 +12,11 @@ class App extends React.Component {
   };
 
   calculate = () => {
+    try {
     this.setState({ value: eval(this.state.value) });
+    } catch (error) {
+      this.setState({ value: "error" });
+    }
   };
 
   setValue = event => {
