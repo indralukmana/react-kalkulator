@@ -13,7 +13,7 @@ class App extends React.Component {
 
   calculate = () => {
     try {
-    this.setState({ value: eval(this.state.value) });
+      this.setState({ value: eval(this.state.value) });
     } catch (error) {
       this.setState({ value: "error" });
     }
@@ -21,7 +21,10 @@ class App extends React.Component {
 
   setValue = event => {
     this.setState({ value: this.state.value + event });
-    console.log(this.state.value);
+  };
+
+  reset = event => {
+    this.setState({ value: "" });
   };
 
   render() {
@@ -48,6 +51,7 @@ class App extends React.Component {
             <Button name="." onClickHandler={this.setValue} />
 
             <Button name="=" onClickHandler={this.calculate} />
+            <Button name="clear" onClickHandler={this.reset} />
           </div>
         </div>
       </div>
