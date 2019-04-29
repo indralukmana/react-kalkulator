@@ -66,10 +66,25 @@ class App extends React.Component {
             <Button name="9" type="button" onClickHandler={this.setValue} />
 
             <Button name="0" type="button" onClickHandler={this.setValue} />
-            <Button name="." type="button" onClickHandler={this.setValue} />
-            <Button name="clear" type="button" onClickHandler={this.reset} />
+            <Button
+              name="."
+              type="button"
+              className="decimal"
+              onClickHandler={this.setValue}
+            />
+            <Button
+              name="AC"
+              type="button"
+              className="clear"
+              onClickHandler={this.reset}
+            />
 
-            <Button name="=" type="button" onClickHandler={this.calculate} />
+            <Button
+              name="="
+              type="button"
+              className="equal"
+              onClickHandler={this.calculate}
+            />
           </div>
         </div>
       </div>
