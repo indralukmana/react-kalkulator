@@ -31,30 +31,45 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="kalkulator">
-          <Input value={this.state.value} />
-          <div>
-            <Button name="+" onClickHandler={this.setValue} />
-            <Button name="-" onClickHandler={this.setValue} />
-            <Button name="/" onClickHandler={this.setValue} />
-            <Button name="*" onClickHandler={this.setValue} />
+          <Input className="screen" value={this.state.value} />
+          <div className="keys">
+            <Button
+              name="-"
+              className="operator"
+              onClickHandler={this.setValue}
+            />
+            <Button
+              name="+"
+              className="operator"
+              onClickHandler={this.setValue}
+            />
+            <Button
+              name="/"
+              className="operator"
+              onClickHandler={this.setValue}
+            />
+            <Button
+              name="*"
+              className="operator"
+              onClickHandler={this.setValue}
+            />
+            <Button name="1" type="button" onClickHandler={this.setValue} />
+            <Button name="2" type="button" onClickHandler={this.setValue} />
+            <Button name="3" type="button" onClickHandler={this.setValue} />
 
-            <Button name="1" onClickHandler={this.setValue} />
-            <Button name="2" onClickHandler={this.setValue} />
-            <Button name="3" onClickHandler={this.setValue} />
+            <Button name="4" type="button" onClickHandler={this.setValue} />
+            <Button name="5" type="button" onClickHandler={this.setValue} />
+            <Button name="6" type="button" onClickHandler={this.setValue} />
 
-            <Button name="4" onClickHandler={this.setValue} />
-            <Button name="5" onClickHandler={this.setValue} />
-            <Button name="6" onClickHandler={this.setValue} />
+            <Button name="7" type="button" onClickHandler={this.setValue} />
+            <Button name="8" type="button" onClickHandler={this.setValue} />
+            <Button name="9" type="button" onClickHandler={this.setValue} />
 
-            <Button name="7" onClickHandler={this.setValue} />
-            <Button name="8" onClickHandler={this.setValue} />
-            <Button name="9" onClickHandler={this.setValue} />
+            <Button name="0" type="button" onClickHandler={this.setValue} />
+            <Button name="." type="button" onClickHandler={this.setValue} />
+            <Button name="clear" type="button" onClickHandler={this.reset} />
 
-            <Button name="0" onClickHandler={this.setValue} />
-            <Button name="." onClickHandler={this.setValue} />
-            <Button name="clear" onClickHandler={this.reset} />
-
-            <Button name="=" onClickHandler={this.calculate} />
+            <Button name="=" type="button" onClickHandler={this.calculate} />
           </div>
         </div>
       </div>
