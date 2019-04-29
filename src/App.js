@@ -2,7 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import Input from "./components/Input";
+import Button from "./components/Button";
+
   return (
     <div className="App">
       <header className="App-header">
